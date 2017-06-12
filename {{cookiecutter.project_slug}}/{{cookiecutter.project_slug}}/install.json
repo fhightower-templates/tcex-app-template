@@ -1,0 +1,16 @@
+{
+  "allowOnDemand": "true",
+  "displayName": "{{ cookiecutter.project_name }}",
+  "listDelimiter": "|",
+  "note": "{{ cookiecutter.project_description }}",
+  "params": [],
+  "playbook": {
+    "outputVariables": [],
+    "retry": {}
+  },
+  "programLanguage": "python",
+  "programMain": "{{ cookiecutter.project_slug }}",
+  "programVersion": "{{ cookiecutter.version }}",
+  "repeatingMinutes": [],
+  "runtimeLevel": "Playbook"
+}
