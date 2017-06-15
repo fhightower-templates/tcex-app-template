@@ -6,6 +6,7 @@ import sys
 
 
 def main():
+    """This code manages and runs the tcex app when it is installed in TC."""
     lib_directory = None
 
     # All Python Version that will be searched
