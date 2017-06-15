@@ -1,5 +1,7 @@
 # TCEX App Template
 
+[![Code Issues](https://www.quantifiedcode.com/api/v1/project/2f013c5d24d946b5b1344781d982d371/badge.svg)](https://www.quantifiedcode.com/app/project/2f013c5d24d946b5b1344781d982d371)
+
 A template for quickly building [TCEX Apps](https://github.com/ThreatConnect-Inc/tcex) using [cookiecutter](https://github.com/audreyr/cookiecutter).
 
 ## Usage
