@@ -72,3 +72,18 @@ dist: clean ## builds source and wheel package
 
 install: clean ## install the package to the active Python's site-packages
 	python setup.py install
+
+lib: ## download required packages into a lib directory
+	./{{ cookiecutter.project_slug }}/app.py --lib
+
+package: ## package the app for deployment to TC
+	./{{ cookiecutter.project_slug }}/app.py --package
+
+collection: ## package the app for deployment to TC as part of a collection of apps
+	./{{ cookiecutter.project_slug }}/app.py --package --collection
+
+validate: ## validate the app's install.json
+	./{{ cookiecutter.project_slug }}/app.py --validate
+
+run: ## run the app locally
+	./{{ cookiecutter.project_slug }}/app.py --run
