@@ -2,9 +2,9 @@
 TCEX App Template
 *****************
 
-.. image:: https://www.quantifiedcode.com/api/v1/project/2f013c5d24d946b5b1344781d982d371/badge.svg
-  :target: https://www.quantifiedcode.com/app/project/2f013c5d24d946b5b1344781d982d371
-  :alt: Code issues
+.. image:: https://api.codacy.com/project/badge/Grade/5e95a4486c7048f6bd74132e167becaf
+   :alt: Codacy Badge
+   :target: https://www.codacy.com/app/fhightower/tcex-app-template
 
 A template for quickly building `TCEX Apps <https://github.com/ThreatConnect-Inc/tcex>`_  using `cookiecutter <https://github.com/audreyr/cookiecutter>`_ .
 
@@ -26,8 +26,3 @@ Once cookiecutter is installed, simply run the following command which will prom
     $ cookiecutter https://github.com/fhightower/tcex-app-template.git
 
 Once the template is cloned and you've started writing code, you can update the app's version using `bumpversion <https://pypi.python.org/pypi/bumpversion>`_ (available via: ``pip install bumpversion``). Running ``bumpversion patch`` will automatically increment the patch version number in ``{{ cookiecutter.project_slug }}/__init__.py`` and ``{{ cookiecutter.project_slug }}/install.json``. ``bumpversion minor`` will increment the minor version number in the same places and ``bumpversion major`` will do the same with the major version number.
-
-
-.. image:: https://api.codacy.com/project/badge/Grade/5e95a4486c7048f6bd74132e167becaf
-   :alt: Codacy Badge
-   :target: https://www.codacy.com/app/fhightower/tcex-app-template?utm_source=github.com&utm_medium=referral&utm_content=fhightower/tcex-app-template&utm_campaign=badger
