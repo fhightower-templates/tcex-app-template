@@ -1,5 +1,5 @@
 {
-  "author_name": "Floyd",
+  "author_name": "Floyd Hightower",
   "project_name": "App Name",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "project_description": "Description of the app.",
