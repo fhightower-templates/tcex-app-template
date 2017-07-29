@@ -1,16 +1,21 @@
-=======================================
+***************************************
 {{ cookiecutter.project_name.title() }}
-=======================================
+***************************************
 
 {{ cookiecutter.project_description }}
 
-Features
---------
+Usage
+========
 
-* TODO
+Todo: Add usage
+
+Features
+========
+
+* Todo: Add features
 
 Credits
----------
+=======
 
 This package was created with Cookiecutter_ and the `fhightower/tcex-app-template`_.
 
