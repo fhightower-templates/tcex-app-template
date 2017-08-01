@@ -26,8 +26,7 @@ BROWSER := python -c "$$BROWSER_PYSCRIPT"
 help:
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
 
-clean: clean-build clean-pyc clean-test ## remove all build, test, coverage and Python artifacts
-
+clean: clean-tcx clean-build clean-pyc clean-test ## remove all tcex, build, test, coverage and Python artifacts
 
 clean-build: ## remove build artifacts
 	rm -fr build/
@@ -46,6 +45,12 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr .tox/
 	rm -f .coverage
 	rm -fr htmlcov/
+
+clean-tcx: ## remove tcx artifacts
+	rm -fr ./{{ cookiecutter.project_slug }}/{{ cookiecutter.project_slug }}-package.log
+	rm -fr ./{{ cookiecutter.project_slug }}/{{ cookiecutter.project_slug }}-libs.log
+	rm -rf ./{{ cookiecutter.project_slug }}/lib_*
+	rm -rf ./{{ cookiecutter.project_slug }}/setup.cfg
 
 lint: ## check style with flake8
 	flake8 {{ cookiecutter.project_slug }} tests
@@ -68,22 +73,22 @@ release: clean ## package and upload a release
 dist: clean ## builds source and wheel package
 	python setup.py sdist
 	python setup.py bdist_wheel
-	ls -l dist
+	ls -l DIST
 
 install: clean ## install the package to the active Python's site-packages
-	python setup.py install
+	cd ./{{ cookiecutter.project_slug }} && python setup.py install
 
-lib: ## download required packages into a lib directory
-	./{{ cookiecutter.project_slug }}/app.py --lib
+lib: clean ## download required packages into a lib directory
+	cd ./{{ cookiecutter.project_slug }} && python app.py --lib
 
-package: ## package the app for deployment to TC
-	./{{ cookiecutter.project_slug }}/app.py --package
+package: clean ## package the app for deployment to TC
+	cd ./{{ cookiecutter.project_slug }} && python app.py --package --zip_out ..
 
-collection: ## package the app for deployment to TC as part of a collection of apps
-	./{{ cookiecutter.project_slug }}/app.py --package --collection
+collection: clean ## package the app for deployment to TC as part of a collection of apps
+	cd ./{{ cookiecutter.project_slug }} && python app.py --package --collection --zip_out ..
 
-validate: ## validate the app's install.json
-	./{{ cookiecutter.project_slug }}/app.py --validate
+validate: clean ## validate the app's install.json
+	python ./{{ cookiecutter.project_slug }}/app.py --validate --install_json ./{{ cookiecutter.project_slug }}/install.json
 
-run: ## run the app locally
-	./{{ cookiecutter.project_slug }}/app.py --run
+run: clean ## run the app locally
+	cd ./{{ cookiecutter.project_slug }} && python app.py --run
