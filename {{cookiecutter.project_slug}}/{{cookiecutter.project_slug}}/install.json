@@ -1,12 +1,14 @@
 {
-  "allowOnDemand": "true",
+  "allowOnDemand": true,
   "displayName": "{{ cookiecutter.project_name }}",
+  "languageVersion": "2.7",
   "listDelimiter": "|",
   "note": "{{ cookiecutter.project_description }}",
   "params": [],
   "playbook": {
     "outputVariables": [],
-    "retry": {}
+    "retry": {},
+    "type": "Client"
   },
   "programLanguage": "python",
   "programMain": "{{ cookiecutter.project_slug }}",
