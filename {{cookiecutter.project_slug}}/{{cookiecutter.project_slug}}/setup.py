@@ -12,7 +12,7 @@ setup(
     description='{{ cookiecutter.project_description }}',
     install_requires=[
         # TODO: Add required packages here...
-        'tcex>=0.3,<0.4'
+        'tcex'
     ],
     license='{{ cookiecutter.open_source_license }}',
     name='{{ cookiecutter.project_slug }}',
