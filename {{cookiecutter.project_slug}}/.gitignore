@@ -63,3 +63,4 @@ target/
 
 # TcEx package
 *.tcx
+{{cookiecutter.project_slug}}*.zip
