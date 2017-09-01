@@ -49,7 +49,6 @@ clean-test: ## remove test and coverage artifacts
 clean-tcx: ## remove tcx artifacts
 	rm -fr ./{{ cookiecutter.project_slug }}/{{ cookiecutter.project_slug }}-package.log
 	rm -fr ./{{ cookiecutter.project_slug }}/{{ cookiecutter.project_slug }}-libs.log
-	rm -rf ./{{ cookiecutter.project_slug }}/lib_*
 	rm -rf ./{{ cookiecutter.project_slug }}/setup.cfg
 
 lint: ## check style with flake8
