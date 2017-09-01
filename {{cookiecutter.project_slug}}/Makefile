@@ -79,10 +79,10 @@ install: clean ## install the package to the active Python's site-packages
 	cd ./{{ cookiecutter.project_slug }} && python setup.py install
 
 lib: clean ## download required packages into a lib directory
-	cd ./{{ cookiecutter.project_slug }} && python app.py --lib
+	cd ./{{ cookiecutter.project_slug }} && tclib
 
 package: clean ## package the app for deployment to TC
-	cd ./{{ cookiecutter.project_slug }} && python app.py --package --zip_out ..
+	cd ./{{ cookiecutter.project_slug }} && tcpackage --outdir ../
 
 collection: clean ## package the app for deployment to TC as part of a collection of apps
 	cd ./{{ cookiecutter.project_slug }} && python app.py --package --collection --zip_out ..
@@ -91,4 +91,4 @@ validate: clean ## validate the app's install.json
 	python ./{{ cookiecutter.project_slug }}/app.py --validate --install_json ./{{ cookiecutter.project_slug }}/install.json
 
 run: clean ## run the app locally
-	cd ./{{ cookiecutter.project_slug }} && python app.py --run
+	cd ./{{ cookiecutter.project_slug }} && tcrun
