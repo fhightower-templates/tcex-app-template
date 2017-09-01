@@ -4,7 +4,15 @@
   "languageVersion": "2.7",
   "listDelimiter": "|",
   "note": "{{ cookiecutter.project_description }}",
-  "params": [],
+  "params": [{
+    "label": "Input String",
+    "name": "string",
+    "playbookDataType": [
+      "String"
+    ],
+    "required": true,
+    "type": "String"
+  }],
   "playbook": {
     "outputVariables": [],
     "retry": {},

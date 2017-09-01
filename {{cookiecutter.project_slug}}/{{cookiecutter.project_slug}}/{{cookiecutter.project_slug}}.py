@@ -8,11 +8,9 @@ from tcex import TcEx
 
 def parse_arguments():
     """Parse arguments coming into the app."""
-    # retrieve a string as an argument
+    # retrieve the string as an argument
     tcex.parser.add_argument('--string', help='Input string', required=True)
-    args = tcex.args
-
-    return args
+    return tcex.args
 
 
 def main():
@@ -20,7 +18,15 @@ def main():
     # handle the incoming arguments
     args = parse_arguments()
 
-    # TODO: Add your code here!
+    # TODO: Add your code below!
+    # read the string from the playbook to get the actual value of the argument
+    string = tcex.playbook.read(args.string)
+
+    # log the string
+    tcex.log.info('String value: {}'.format(string))
+
+    # output the reversed string to downstream playbook apps
+    tcex.playbook.create_output('{{cookiecutter.project_slug}}.string', string[::-1])
 
     # exit
     tcex.exit()
