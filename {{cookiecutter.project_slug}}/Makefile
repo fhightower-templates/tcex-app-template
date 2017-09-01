@@ -80,7 +80,7 @@ install: clean ## install the package to the active Python's site-packages
 lib: clean ## download required packages into a lib directory
 	cd ./{{ cookiecutter.project_slug }} && tclib
 
-package: clean ## package the app for deployment to TC
+pack: clean ## package the app for deployment to TC
 	cd ./{{ cookiecutter.project_slug }} && tcpackage --outdir ../
 
 collection: clean ## package the app for deployment to TC as part of a collection of apps
