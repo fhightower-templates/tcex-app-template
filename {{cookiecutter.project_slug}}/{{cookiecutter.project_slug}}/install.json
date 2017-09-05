@@ -14,7 +14,10 @@
     "type": "String"
   }],
   "playbook": {
-    "outputVariables": [],
+    "outputVariables": [{
+      "name": "{{cookiecutter.project_slug}}.reversed_string",
+      "type": "String"
+    }],
     "retry": {},
     "type": "Client"
   },

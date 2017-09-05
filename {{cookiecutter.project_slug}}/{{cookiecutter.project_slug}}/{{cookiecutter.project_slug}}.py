@@ -26,7 +26,7 @@ def main():
     tcex.log.info('String value: {}'.format(string))
 
     # output the reversed string to downstream playbook apps
-    tcex.playbook.create_output('{{cookiecutter.project_slug}}.string', string[::-1])
+    tcex.playbook.create_output('{{cookiecutter.project_slug}}.reversed_string', string[::-1])
 
     # exit
     tcex.exit()
