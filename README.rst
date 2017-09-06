@@ -23,6 +23,6 @@ Once cookiecutter is installed, simply run the following command which will prom
 
     # This will ask you to give some input values and will then create a basic
     # package for you based on those values in the current directory.
-    $ cookiecutter https://github.com/fhightower/tcex-app-template.git
+    cookiecutter https://github.com/fhightower/tcex-app-template.git
 
 Once the template is cloned and you've started writing code, you can update the app's version using `bumpversion <https://pypi.python.org/pypi/bumpversion>`_ (available via: ``pip install bumpversion``). Running ``bumpversion patch`` will automatically increment the patch version number in ``{{ cookiecutter.project_slug }}/__init__.py`` and ``{{ cookiecutter.project_slug }}/install.json``. ``bumpversion minor`` will increment the minor version number in the same places and ``bumpversion major`` will do the same with the major version number.
