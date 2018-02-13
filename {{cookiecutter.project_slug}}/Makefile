@@ -71,3 +71,6 @@ validate: clean ## validate the app's install.json
 
 run: clean ## run the app locally
 	cd ./{{ cookiecutter.project_slug }} && tcrun
+
+test: clean ## run tests on the app
+	pytest
