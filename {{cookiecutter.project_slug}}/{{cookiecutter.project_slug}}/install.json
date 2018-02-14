@@ -1,10 +1,10 @@
 {
   "allowOnDemand": true,
   "displayName": "{{ cookiecutter.project_name }}",
-  "languageVersion": "2.7",
+  "languageVersion": "3.6.x",
   "listDelimiter": "|",
   "note": "{{ cookiecutter.project_description }}",
-  "params": [{
+  {% if cookiecutter.runtime_level == 'Playbook' %}"params": [{
     "label": "Input String",
     "name": "string",
     "playbookDataType": [
@@ -20,10 +20,30 @@
     }],
     "retry": {},
     "type": "Client"
-  },
+  },{% elif cookiecutter.runtime_level == 'Organization' %}"params" : [ {
+    "name" : "api_access_id",
+    "label" : "ThreatConnect API Access ID",
+    "validValues": ["${USER:TEXT}", "${ORGANIZATION:TEXT}"]
+  }, {
+    "name" : "api_secret_key",
+    "label" : "ThreatConnect API Secret Key",
+    "encrypt" : true,
+    "validValues": ["${USER:KEYCHAIN}", "${ORGANIZATION:KEYCHAIN}"]
+  }, {
+    "name" : "api_default_org",
+    "label" : "ThreatConnect Default Org Name",
+    "type": "choice",
+    "validValues": ["${OWNERS}"]
+  }, {
+    "name" : "log_level",
+    "label" : "Logging Level",
+    "default" : "Error",
+    "type": "choice",
+    "validValues": ["Debug", "Info", "Warning", "Error", "Critical"]
+  } ],{% endif %}
   "programLanguage": "python",
   "programMain": "{{ cookiecutter.project_slug }}",
   "programVersion": "{{ cookiecutter.version }}",
   "repeatingMinutes": [],
-  "runtimeLevel": "Playbook"
+  "runtimeLevel": "{{ cookiecutter.runtime_level }}"
 }
