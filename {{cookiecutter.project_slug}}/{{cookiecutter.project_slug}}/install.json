@@ -40,6 +40,11 @@
     "default" : "Error",
     "type": "choice",
     "validValues": ["Debug", "Info", "Warning", "Error", "Critical"]
+  }, {
+    "name" : "string",
+    "label" : "Input String",
+    "default" : "bingo",
+    "type": "string"
   } ],{% endif %}
   "programLanguage": "python",
   "programMain": "{{ cookiecutter.project_slug }}",

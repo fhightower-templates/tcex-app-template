@@ -17,8 +17,7 @@ def main():
     """."""
     # handle the incoming arguments
     args = parse_arguments()
-
-    # TODO: Add your code below!
+    {% if cookiecutter.runtime_level == 'Playbook' %}
     # read the string from the playbook to get the actual value of the argument
     string = tcex.playbook.read(args.string)
 
@@ -27,9 +26,12 @@ def main():
 
     # output the reversed string to downstream playbook apps
     tcex.playbook.create_output('{{cookiecutter.project_slug}}.reversed_string', string[::-1])
-
+    {% elif cookiecutter.runtime_level == 'Organization' %}
+    tcex.log.info('String value: {}'.format(args.string))
+    tcex.message_tc('Reversed string: {}'.format(args.string[::-1]))
+    {% endif %}
     # exit
-    tcex.exit()
+    tcex.exit(0)
 
 
 if __name__ == "__main__":
