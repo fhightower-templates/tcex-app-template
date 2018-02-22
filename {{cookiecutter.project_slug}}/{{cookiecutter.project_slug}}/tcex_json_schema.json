@@ -4,16 +4,53 @@
     "allowOnDemand": {
       "type": "boolean"
     },
+    "allowRunAsUser": {
+      "type": "boolean"
+    },
     "apiUserTokenParam": {
       "type": "boolean"
     },
     "displayName": {
       "type": "string"
     },
+    "feeds": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "attributesFile": {
+            "type": "string"
+          },
+          "enableBulkJson": {
+            "type": "boolean"
+          },
+          "documentStorageLimitMb": {
+            "type": "integer"
+          },
+          "indicatorLimit": {
+            "type": "integer"
+          },
+          "jobFile": {
+            "type": "string"
+          },
+          "sourceCategory": {
+            "type": "string"
+          },
+          "sourceDescription": {
+            "type": "string"
+          },
+          "sourceName": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "languageVersion": {
       "type": "string"
     },
     "listDelimiter": {
+      "type": "string"
+    },
+    "minServerVersion": {
       "type": "string"
     },
     "note": {
@@ -121,11 +158,14 @@
                 "type": "string"
               }
             },
-            "required": ["name", "type"],
+            "required": [
+              "name",
+              "type"
+            ],
             "type": "object"
           },
           "type": "array",
-          "uniqueItems": true
+          "uniqueItems": false
         },
         "retry": {
           "additionalProperties": false,
