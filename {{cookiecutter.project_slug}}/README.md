@@ -18,9 +18,7 @@ Todo: add output definitions
 
 ## Use Cases
 
-Todo: add use cases
-
-{% else %}## Usage
+Todo: add use cases{% else %}## Usage
 
 Todo: add instructions here{% endif %}
 

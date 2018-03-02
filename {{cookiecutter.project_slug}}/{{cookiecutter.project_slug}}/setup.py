@@ -9,8 +9,8 @@ if not version:
 
 setup(
     author='{{ cookiecutter.author_name }}',
-    description='{{ cookiecutter.project_description }}',
-    license='{{ cookiecutter.open_source_license }}',
+    description='{{ cookiecutter.project_description }}',{% if cookiecutter.open_source_license != 'Not open source' %}
+    license='{{ cookiecutter.open_source_license }}',{% endif %}
     name='{{ cookiecutter.project_slug }}',
     packages=find_packages(),
     version=version
