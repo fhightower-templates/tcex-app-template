@@ -42,8 +42,8 @@ if __name__ == "__main__":
         main()
     except SystemExit:
         pass
-    except:  # if there are any strange errors, log it to the logging in the UI
-        err = 'Generic Error. See logs for more details.'
+    except Exception as e:  # if there are any strange errors, log it to the logging in the UI
+        err = 'Generic Error.  See logs for more details ({}).'.format(e)
         tcex.log.error(traceback.format_exc())
         tcex.message_tc(err)
         tcex.playbook.exit(1)
