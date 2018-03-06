@@ -31,3 +31,15 @@ To quickly create a TCEX app (which will be created in a directory in the curren
 .. code-block:: shell
 
     cookiecutter https://github.com/fhightower-templates/tcex-app-template.git
+
+Installing in ThreatConnect
+===========================
+
+To install an app created with this template in ThreatConnect, run:
+
+.. code-block:: shell
+
+    make lib
+    make pack
+
+This will create a ``.tcx`` file in the top app directory which will work in ThreatConnect assuming that your instance of ThreatConnect has the same version of python that was used during the ``make lib`` command.
