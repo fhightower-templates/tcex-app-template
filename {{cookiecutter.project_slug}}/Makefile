@@ -66,5 +66,8 @@ pack: clean ## package the app for deployment to TC
 run: clean ## run the app locally
 	cd ./{{ cookiecutter.project_slug }} && tcrun
 
+profile: clean ## create a tcex.json profile for the app
+	cd ./{{ cookiecutter.project_slug }} && tcprofile --outfile tcex.json
+
 test: clean ## run tests on the app
 	pytest
