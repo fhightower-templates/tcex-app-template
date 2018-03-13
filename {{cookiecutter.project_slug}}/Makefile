@@ -63,8 +63,8 @@ lib: clean ## download required packages into a lib directory
 pack: clean ## package the app for deployment to TC
 	cd ./{{ cookiecutter.project_slug }} && tcpackage --outdir ../
 
-run: clean ## run the app locally
-	cd ./{{ cookiecutter.project_slug }} && tcrun
+run: clean ## run the app locally... the project name must be lower cased as done here: https://github.com/ThreatConnect-Inc/tcex/blob/master/bin/tcprofile#L106
+	cd ./{{ cookiecutter.project_slug }} && tcrun --profile {{ cookiecutter.project_name.lower().replace(' ', '-') }}
 
 profile: clean ## create a tcex.json profile for the app
 	cd ./{{ cookiecutter.project_slug }} && tcprofile --outfile tcex.json
