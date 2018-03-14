@@ -41,4 +41,4 @@ if __name__ == "__main__":
         err = 'Generic Error.  See logs for more details ({}).'.format(e)
         tcex.log.error(traceback.format_exc())
         tcex.message_tc(err)
-        tcex.playbook.exit(1)
+        tcex.exit(1)
