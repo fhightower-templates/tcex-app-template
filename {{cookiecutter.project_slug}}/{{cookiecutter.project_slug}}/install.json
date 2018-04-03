@@ -21,7 +21,7 @@
     }],
     "retry": {},
     "type": "Client"
-  },{% elif cookiecutter.runtime_level == 'Organization' %}"params" : [ {
+  },{% elif cookiecutter.runtime_level == 'Organization' %}"params" : [{
     "name" : "api_default_org",
     "label" : "ThreatConnect Default Org Name",
     "type": "Choice",
@@ -32,12 +32,7 @@
     "default" : "Warning",
     "type": "Choice",
     "validValues": ["Debug", "Info", "Warning", "Error", "Critical"]
-  }, {
-    "name" : "string",
-    "label" : "Input String",
-    "default" : "bingo",
-    "type": "string"
-  } ],{% endif %}
+  }],{% endif %}
   "programLanguage": "python",
   "programMain": "{{ cookiecutter.project_slug }}",
   "programVersion": "{{ cookiecutter.version }}",
