@@ -1,5 +1,6 @@
 {
-  "allowOnDemand": true,
+  "allowOnDemand": true,{% if cookiecutter.runtime_level == 'Organization' %}
+  "apiUserTokenParam": true,{% endif %}
   "displayName": "{{ cookiecutter.project_name }}",
   "languageVersion": "3.6.x",
   "listDelimiter": "|",
@@ -21,15 +22,6 @@
     "retry": {},
     "type": "Client"
   },{% elif cookiecutter.runtime_level == 'Organization' %}"params" : [ {
-    "name" : "api_access_id",
-    "label" : "ThreatConnect API Access ID",
-    "validValues": ["${USER:TEXT}", "${ORGANIZATION:TEXT}"]
-  }, {
-    "name" : "api_secret_key",
-    "label" : "ThreatConnect API Secret Key",
-    "encrypt" : true,
-    "validValues": ["${USER:KEYCHAIN}", "${ORGANIZATION:KEYCHAIN}"]
-  }, {
     "name" : "api_default_org",
     "label" : "ThreatConnect Default Org Name",
     "type": "choice",
