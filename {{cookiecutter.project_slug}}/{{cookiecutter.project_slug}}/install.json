@@ -24,13 +24,13 @@
   },{% elif cookiecutter.runtime_level == 'Organization' %}"params" : [ {
     "name" : "api_default_org",
     "label" : "ThreatConnect Default Org Name",
-    "type": "choice",
+    "type": "Choice",
     "validValues": ["${OWNERS}"]
   }, {
     "name" : "log_level",
     "label" : "Logging Level",
-    "default" : "Error",
-    "type": "choice",
+    "default" : "Warning",
+    "type": "Choice",
     "validValues": ["Debug", "Info", "Warning", "Error", "Critical"]
   }, {
     "name" : "string",
