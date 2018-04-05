@@ -39,24 +39,6 @@ clean-tcx: ## remove tcx artifacts
 	rm -fr ./{{ cookiecutter.project_slug }}/{{ cookiecutter.project_slug }}-package.log
 	rm -fr ./{{ cookiecutter.project_slug }}/{{ cookiecutter.project_slug }}-libs.log
 
-lint: ## check style with flake8
-	flake8 {{ cookiecutter.project_slug }} tests
-
-servedocs: docs ## compile the docs watching for changes
-	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .
-
-release: clean ## package and upload a release
-	python setup.py sdist upload
-	python setup.py bdist_wheel upload
-
-dist: clean ## builds source and wheel package
-	python setup.py sdist
-	python setup.py bdist_wheel
-	ls -l DIST
-
-install: clean ## install the package to the active Python's site-packages
-	cd ./{{ cookiecutter.project_slug }} && python setup.py install
-
 lib: clean ## download required packages into a lib directory
 	cd ./{{ cookiecutter.project_slug }} && tclib
 
