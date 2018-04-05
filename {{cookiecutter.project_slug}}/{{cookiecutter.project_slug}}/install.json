@@ -27,7 +27,7 @@
     "type": "Choice",
     "validValues": ["${OWNERS}"]
   }, {
-    "name" : "log_level",
+    "name" : "tc_log_level",
     "label" : "Logging Level",
     "default" : "Warning",
     "type": "Choice",
