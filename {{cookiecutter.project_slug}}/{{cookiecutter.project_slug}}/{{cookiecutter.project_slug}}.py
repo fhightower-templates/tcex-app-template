@@ -16,8 +16,8 @@ def parse_arguments():
 
 def main():
     """."""
-    args = parse_arguments()
     {% if cookiecutter.runtime_level == 'Playbook' -%}
+    args = parse_arguments()
     # read the string from the playbook to get the actual value of the argument
     string = tcex.playbook.read(args.string)
 
