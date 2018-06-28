@@ -2,6 +2,10 @@
 TCEX App Template
 *****************
 
+PROJECT MOVED TO GITLAB: https://gitlab.com/fhightower-templates. 
+
+-----
+
 .. image:: https://api.codacy.com/project/badge/Grade/c6de421bb24442b6b3955defc0170c3d
     :alt: Codacy Badge
     :target: https://www.codacy.com/app/fhightower/tcex-app-template
